@@ -2,13 +2,20 @@ import type { JSX } from 'react';
 import type { Movie } from '@src/types/Movie';
 import './ThumbCard.scss';
 
-interface Props {
-  movie: Movie | null;
-  isEmptySpacer?: boolean;
+interface ThumbCardProps {
+  movie: Movie;
+  isEmptySpacer?: false;  // falseまたは未指定を許容
 }
 
+interface SpacerProps {
+  movie?: never;
+  isEmptySpacer: true;
+}
+
+type Props = ThumbCardProps | SpacerProps;
+
 export default function ThumbCard({ movie, isEmptySpacer }: Props): JSX.Element {
-  if (isEmptySpacer === true || movie == null) {
+  if (isEmptySpacer === true) {
     return (
       <div className="thumb-card" style={{ visibility: 'hidden', height: 1 }}>
         <div className="thumb-image-container"></div>
@@ -20,7 +27,13 @@ export default function ThumbCard({ movie, isEmptySpacer }: Props): JSX.Element 
 
   if (movie.href) {
     return (
-      <a href={movie.href} target="_blank" rel="noopener noreferrer" className="thumb-card">
+      <a
+        href={movie.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="thumb-card"
+        aria-label={movie.title}
+      >
         {content}
       </a>
     );

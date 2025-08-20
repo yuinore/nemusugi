@@ -6,10 +6,14 @@ import profiles from '@src/enum/Profiles';
 import movies from '@src/enum/Movies';
 import dayjs from 'dayjs';
 import _ from 'lodash';
+import { useMemo } from 'react';
 import type { Movie } from '@src/types/Movie';
 
 function App() {
-  const sortedMovies = _.orderBy(movies, (movie: Movie) => dayjs(movie.published_at).format('YYYY-MM-DD'), 'desc');
+  const sortedMovies = useMemo(() =>
+    _.orderBy(movies, (movie: Movie) => dayjs(movie.published_at).format('YYYY-MM-DD'), 'desc'),
+    [movies]
+  );
 
   return (
     <div className="app">
@@ -31,9 +35,9 @@ function App() {
             {sortedMovies.map((movie: Movie, index: number) => (
               <ThumbCard key={index} movie={movie} />
             ))}
-            <ThumbCard movie={null} isEmptySpacer={true} />
-            <ThumbCard movie={null} isEmptySpacer={true} />
-            <ThumbCard movie={null} isEmptySpacer={true} />
+            <ThumbCard isEmptySpacer={true} />
+            <ThumbCard isEmptySpacer={true} />
+            <ThumbCard isEmptySpacer={true} />
           </div>
         </section>
       </main>

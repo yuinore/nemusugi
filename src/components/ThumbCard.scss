@@ -15,6 +15,11 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
+.thumb-card:focus-visible {
+  outline: 4px solid #000000;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
 .thumb-image-container {
   position: relative;
   width: 100%;
