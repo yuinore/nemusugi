@@ -17,27 +17,27 @@ This is a personal portfolio website built with modern web technologies to displ
 
 ### Prerequisites
 
-- Node.js (version X.X.X or higher)
-- npm or yarn
+- Node.js 22.18.0
+- yarn
 
 ### Installation
 
 ```bash
-git clone [repository-url]
+git clone git@github.com:yuinore/nemusugi.git
 cd nemusugi
-npm install
+yarn install
 ```
 
 ### Development
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
 ### Build
 
 ```bash
-npm run build
+yarn run build
 ```
 
 ## License & Contributing
