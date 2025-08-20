@@ -1,3 +1,0 @@
-# ignore .png and .jpg in this directory (but not in subdirectories)
-/*.png
-/*.jpg
