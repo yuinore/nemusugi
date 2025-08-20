@@ -3,7 +3,7 @@ import type { Movie } from '@src/types/Movie';
 const movies: Movie[] = [
   {
     title: '現実をカットアップしてみた',
-    image: 'movie_001_cutup.png',
+    image: 'movie_001_cutup.jpg',
     description: '2014/9/7',
     href: 'https://www.youtube.com/watch?v=zsQD9_drLbY',
     published_at: '2014-09-07',
@@ -52,7 +52,7 @@ const movies: Movie[] = [
   },
   {
     title: 'あまいこと',
-    image: 'movie_007_sweets.png',
+    image: 'movie_007_sweets.jpg',
     description: 'Coming soon...',
     href: null,
     published_at: '2019-09-14',
@@ -60,7 +60,7 @@ const movies: Movie[] = [
   },
   {
     title: 'wa:k around the wor:d',
-    image: 'movie_009_nekomimi_00.png',
+    image: 'movie_009_nekomimi_00.jpg',
     description: '2017/2/14',
     href: 'https://youtu.be/QtbDKZWrUgY',
     published_at: '2017-02-14',
@@ -77,7 +77,7 @@ const movies: Movie[] = [
   },
   {
     title: '???',
-    image: 'movie_011_candy_wip_01.png',
+    image: 'movie_011_candy_wip_01.jpg',
     description: 'Coming soon...',
     href: null,
     published_at: '2023-09-17',
@@ -85,7 +85,7 @@ const movies: Movie[] = [
   },
   {
     title: '???',
-    image: 'movie_010_bird_wip_01.png',
+    image: 'movie_010_bird_wip_01.jpg',
     description: 'Coming soon...',
     href: null,
     published_at: '2025-10-12',

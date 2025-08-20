@@ -47,10 +47,20 @@ export default function ThumbCard({ movie, isEmptySpacer }: Props): JSX.Element 
 }
 
 function ThumbCardContent({ movie }: { movie: Movie }): JSX.Element {
+  // @2x画像のパスを生成
+  const baseImageName = movie.image.replace(/\.(jpg|jpeg|png|webp)$/i, '');
+  const extension = movie.image.match(/\.(jpg|jpeg|png|webp)$/i)?.[1] || 'jpg';
+  const image2x = `${baseImageName}@2x.${extension}`;
+
   return (
     <>
       <div className="thumb-image-container">
-        <img src={`/images/${movie.image}`} alt={movie.title} className="thumb-image" />
+        <img
+          src={`/images/${movie.image}`}
+          srcSet={`/images/${movie.image} 1x, /images/${image2x} 2x`}
+          alt={movie.title}
+          className="thumb-image"
+        />
         {movie.isComingSoon && (
           <div className="coming-soon-overlay">
             <span className="coming-soon-text jost-light-italic">coming soon</span>
