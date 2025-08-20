@@ -5,7 +5,7 @@ import './Footer.scss';
 
 export default function Footer(): JSX.Element {
   const shareUrl = window.location.href;
-  const shareTitle = 'nemusugi';
+  const shareTitle = 'クソネミの世界を探索しよう #nemusugi';
 
   return (
     <footer className="footer">
