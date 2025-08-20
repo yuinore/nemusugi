@@ -1,0 +1,16 @@
+{
+    "redirects": [
+      {
+        "source": "/(.*)",
+        "has": [
+          {
+            "type": "host",
+            "value": "www.nemusugi.jp"
+          }
+        ],
+        "destination": "https://nemusugi.jp/$1",
+        "permanent": true
+      }
+    ]
+  }
+  
