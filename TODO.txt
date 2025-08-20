@@ -1,0 +1,5 @@
+# TODO
+
+- 画像ファイルの圧縮
+- eslint の設定と scripts の追加
+- prettier の設定と scripts の追加
