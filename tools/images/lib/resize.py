@@ -17,6 +17,7 @@ def run_convert(input_path, output_path, max_height, quality):
             input_path,
             '-resize', f'x{max_height}>',  # 高さを指定（幅は自動調整）
             '-quality', str(quality),
+            '-interlace', 'Plane',  # プログレッシブJPEGを作成
             '-strip',  # メタデータを削除
             output_path
         ]
