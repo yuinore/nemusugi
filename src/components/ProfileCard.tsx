@@ -16,13 +16,13 @@ export default function ProfileCard({ profile }: Props): JSX.Element {
         rel="noopener noreferrer"
         aria-label={profile.name}
       >
-        <div className="profile-image-container">
+        <span className="profile-image-container">
           <img
             src={`/images/${profile.image}`}
             alt={`${profile.name} のプロフィール画像`}
             className="profile-image"
           />
-        </div>
+        </span>
       </a>
       <div className="profile-name">
         <span className="jost-light">{profile.name}</span>
