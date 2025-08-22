@@ -19,6 +19,9 @@ function App() {
     <div className="app">
       <header className="header">
         <h1 className="title jost-light-italic">#nemusugi</h1>
+        <div className="subtitle jost-light">
+          I'm crazy sleepy.
+        </div>
       </header>
 
       <main className="main">

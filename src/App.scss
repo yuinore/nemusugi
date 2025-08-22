@@ -29,8 +29,16 @@
 
 .title {
   font-size: 4rem;
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
   color: #000000;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin: 0 0 2rem 0;
+  color: #000000;
+  letter-spacing: 0.3em;
 }
 
 /* Main content */
