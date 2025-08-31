@@ -82,11 +82,19 @@
   .title {
     font-size: 3rem;
   }
+
+  .subtitle {
+    font-size: 0.80rem;
+  }
 }
 
 @media (max-width: 480px) {
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.70rem;
   }
 
   .profiles-container {
