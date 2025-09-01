@@ -155,6 +155,7 @@ function ThumbCardContent({
             playsInline
             preload="auto"
             loop
+            inert // Firefox で video 要素がフォーカスを獲得しないようにする
           />
         )}
         {movie.isComingSoon && (
