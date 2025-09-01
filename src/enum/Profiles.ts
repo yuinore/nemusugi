@@ -3,12 +3,14 @@ import type { Profile } from '@src/types/Profile';
 const profiles: Profile[] = [
   {
     name: 'yuinore',
-    image: 'profile/yuinore.png',
+    image: '/images/profile/yuinore.png',
+    image2x: '/images/profile/yuinore@2x.png',
     href: 'https://x.com/yuinore',
   },
   {
     name: 'Yu^ta',
-    image: 'profile/yuta.png',
+    image: '/images/profile/yuta.png',
+    image2x: '/images/profile/yuta@2x.png',
     href: 'https://x.com/yutaortslabo',
   },
 ];

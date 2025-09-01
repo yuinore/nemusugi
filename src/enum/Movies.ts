@@ -3,7 +3,9 @@ import type { Movie } from '@src/types/Movie';
 const movies: Movie[] = [
   {
     title: '現実をカットアップしてみた',
-    image: 'movie_001_cutup.jpg',
+    image: '/images/movie_001_cutup.jpg',
+    image2x: '/images/movie_001_cutup@2x.jpg',
+    video: '/videos/movie_001_cutup.mp4',
     description: '2014/9/7',
     href: 'https://www.youtube.com/watch?v=zsQD9_drLbY&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2014-09-07',
@@ -11,7 +13,9 @@ const movies: Movie[] = [
   },
   {
     title: 'いちご みんと ちょこれーと',
-    image: 'movie_002_smc_00.jpg',
+    image: '/images/movie_002_smc_00.jpg',
+    image2x: '/images/movie_002_smc_00@2x.jpg',
+    video: '/videos/movie_002_smc.mp4',
     description: '2017/2/14\n初出 : FRENZ 2014',
     href: 'https://www.youtube.com/watch?v=SV_BxJzKcnY&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2017-02-14',
@@ -19,7 +23,9 @@ const movies: Movie[] = [
   },
   {
     title: 'Busy Factory',
-    image: 'movie_003_busyfactory.jpg',
+    image: '/images/movie_003_busyfactory.jpg',
+    image2x: '/images/movie_003_busyfactory@2x.jpg',
+    video: '/videos/movie_003_busyfactory.mp4',
     description: '2015/10/3\n3DCG : こんにチワワ\n初出 : FRENZ 2015',
     href: 'https://www.youtube.com/watch?v=p2dy2LkOAzs&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2015-10-03',
@@ -27,7 +33,9 @@ const movies: Movie[] = [
   },
   {
     title: 'Sunny',
-    image: 'movie_004_sunny.jpg',
+    image: '/images/movie_004_sunny.jpg',
+    image2x: '/images/movie_004_sunny@2x.jpg',
+    video: '/videos/movie_004_sunny.mp4',
     description: '2016/9/24\n初出 : FRENZ 2016',
     href: 'https://www.youtube.com/watch?v=tp-UAMO69qQ&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2016-09-24',
@@ -35,7 +43,9 @@ const movies: Movie[] = [
   },
   {
     title: 'わたしのて',
-    image: 'movie_005_flyup_00.jpg',
+    image: '/images/movie_005_flyup_00.jpg',
+    image2x: '/images/movie_005_flyup_00@2x.jpg',
+    video: '/videos/movie_005_flyup.mp4',
     description:
       '2022/2/22\nIllustrations : にせねこ\n3DCG協力 : こんにチワワ\n初出 : FRENZ 2017',
     href: 'https://www.youtube.com/watch?v=RAl73LFNGi4&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
@@ -44,7 +54,9 @@ const movies: Movie[] = [
   },
   {
     title: '城主の時代だ！',
-    image: 'movie_006_castleage_01.jpg',
+    image: '/images/movie_006_castleage_01.jpg',
+    image2x: '/images/movie_006_castleage_01@2x.jpg',
+    video: '/videos/movie_006_castleage.mp4',
     description: '2018/12/22\nIllustrations : furea2\n初出 : FRENZ 2018',
     href: 'https://www.youtube.com/watch?v=vU8lj_drm9A&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2018-12-22',
@@ -52,7 +64,9 @@ const movies: Movie[] = [
   },
   {
     title: 'あまいこと',
-    image: 'movie_007_sweets.jpg',
+    image: '/images/movie_007_sweets.jpg',
+    image2x: '/images/movie_007_sweets@2x.jpg',
+    video: null,
     description: 'Coming soon...',
     href: null,
     published_at: '2019-09-14',
@@ -60,7 +74,9 @@ const movies: Movie[] = [
   },
   {
     title: 'wa:k around the wor:d',
-    image: 'movie_009_nekomimi_00.jpg',
+    image: '/images/movie_009_nekomimi_00.jpg',
+    image2x: '/images/movie_009_nekomimi_00@2x.jpg',
+    video: '/videos/movie_009_nekomimi.mp4',
     description: '2017/2/14',
     href: 'https://www.youtube.com/watch?v=QtbDKZWrUgY&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2017-02-14',
@@ -68,16 +84,19 @@ const movies: Movie[] = [
   },
   {
     title: 'Mana',
-    image: 'movie_008_mana_00.jpg',
-    description:
-      '2022/1/30',
+    image: '/images/movie_008_mana_00.jpg',
+    image2x: '/images/movie_008_mana_00@2x.jpg',
+    video: '/videos/movie_008_mana.mp4',
+    description: '2022/1/30',
     href: 'https://www.youtube.com/watch?v=olFZDX0PeBQ&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2022-01-30',
     isComingSoon: false,
   },
   {
     title: '???',
-    image: 'movie_011_candy_wip_01.jpg',
+    image: '/images/movie_011_candy_wip_01.jpg',
+    image2x: '/images/movie_011_candy_wip_01@2x.jpg',
+    video: null,
     description: 'Coming soon...',
     href: null,
     published_at: '2023-09-17',
@@ -85,7 +104,9 @@ const movies: Movie[] = [
   },
   {
     title: '???',
-    image: 'movie_010_bird_wip_01.jpg',
+    image: '/images/movie_010_bird_wip_01.jpg',
+    image2x: '/images/movie_010_bird_wip_01@2x.jpg',
+    video: null,
     description: 'Coming soon...',
     href: null,
     published_at: '2025-10-12',
