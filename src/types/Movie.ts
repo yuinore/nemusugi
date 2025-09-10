@@ -5,6 +5,7 @@ interface Movie {
   video: string | null;
   description: string;
   href: string | null;
+  hrefEmbed: string | null;
   published_at: string;
   isComingSoon: boolean;
 }

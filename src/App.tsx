@@ -6,11 +6,15 @@ import profiles from '@src/enum/Profiles';
 import movies from '@src/enum/Movies';
 import dayjs from 'dayjs';
 import _ from 'lodash';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useImageLoadTracker } from '@src/hooks/useImageLoadTracker';
 import type { Movie } from '@src/types/Movie';
+import PopupContainer from './components/PopupContainer';
 
-function App() {
+export default function App() {
+  const [isPopupActive, setIsPopupActive] = useState(false);
+  const [currentMovie, setCurrentMovie] = useState<Movie | null>(null);
+
   const sortedMovies = useMemo(
     () =>
       _.orderBy(
@@ -37,6 +41,18 @@ function App() {
   const { onImageLoad, onImageError, allImagesLoaded } =
     useImageLoadTracker(allImageSources);
 
+  const handleMovieClick = (movie: Movie) => {
+    if (movie.hrefEmbed) {
+      setCurrentMovie(movie);
+      setIsPopupActive(true);
+    }
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupActive(false);
+    setCurrentMovie(null);
+  };
+
   return (
     <div className="app">
       <header className="header">
@@ -44,7 +60,25 @@ function App() {
         <div className="subtitle jost-light">I'm crazy sleepy.</div>
       </header>
 
-      <main className="main">
+      <PopupContainer
+        active={isPopupActive}
+        onClose={handleClosePopup}
+      >
+        {currentMovie && currentMovie.hrefEmbed && (
+          <iframe
+            width="560"
+            height="315"
+            src={currentMovie.hrefEmbed}
+            title={`YouTube video player - ${currentMovie.title}`}
+            style={{ border: 'none' }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        )}
+      </PopupContainer>
+
+      <main className="main" id="main">
         <section className="profiles-section">
           <div className="profiles-container">
             {profiles.map((profile) => (
@@ -67,6 +101,7 @@ function App() {
                 onImageLoad={onImageLoad}
                 onImageError={onImageError}
                 shouldLoadVideo={allImagesLoaded}
+                onClick={handleMovieClick}
               />
             ))}
             <ThumbCard isEmptySpacer={true} />
@@ -80,5 +115,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

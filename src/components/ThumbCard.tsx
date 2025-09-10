@@ -9,6 +9,7 @@ interface ThumbCardProps {
   onImageLoad: (imageSrc: string) => void;
   onImageError: (imageSrc: string) => void;
   shouldLoadVideo: boolean;
+  onClick: (movie: Movie) => void;
 }
 
 interface SpacerProps {
@@ -17,6 +18,7 @@ interface SpacerProps {
   onImageLoad?: never; // 未指定のみを許容
   onImageError?: never; // 未指定のみを許容
   shouldLoadVideo?: never; // 未指定のみを許容
+  onClick?: never; // 未指定のみを許容
 }
 
 type Props = ThumbCardProps | SpacerProps;
@@ -27,6 +29,7 @@ export default function ThumbCard({
   onImageLoad,
   onImageError,
   shouldLoadVideo,
+  onClick,
 }: Props): JSX.Element {
   if (isEmptySpacer === true) {
     return (
@@ -45,6 +48,13 @@ export default function ThumbCard({
     />
   );
 
+  const handleClick = (event: React.MouseEvent) => {
+    if (movie.hrefEmbed) {
+      event.preventDefault();
+      onClick(movie);
+    }
+  };
+
   if (movie.href) {
     return (
       <a
@@ -53,6 +63,7 @@ export default function ThumbCard({
         rel="noopener noreferrer"
         className="thumb-card"
         aria-label={movie.title}
+        onClick={handleClick}
       >
         {content}
       </a>
@@ -118,12 +129,14 @@ function ThumbCardContent({
   };
 
   const handlePlayStart = () => {
+    console.log('handlePlayStart');
     if (videoRef.current) {
       playVideo(videoRef.current);
     }
   };
 
   const handlePlayStop = () => {
+    console.log('handlePlayStop');
     if (videoRef.current) {
       pauseVideo(videoRef.current);
     }
