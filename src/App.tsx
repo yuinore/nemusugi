@@ -60,10 +60,7 @@ export default function App() {
         <div className="subtitle jost-light">I'm crazy sleepy.</div>
       </header>
 
-      <PopupContainer
-        active={isPopupActive}
-        onClose={handleClosePopup}
-      >
+      <PopupContainer active={isPopupActive} onClose={handleClosePopup}>
         {currentMovie && currentMovie.hrefEmbed && (
           <iframe
             width="560"
@@ -102,6 +99,7 @@ export default function App() {
                 onImageError={onImageError}
                 shouldLoadVideo={allImagesLoaded}
                 onClick={handleMovieClick}
+                isPopupActive={isPopupActive}
               />
             ))}
             <ThumbCard isEmptySpacer={true} />

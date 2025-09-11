@@ -1,5 +1,5 @@
 import type { JSX } from 'react';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import type { Movie } from '@src/types/Movie';
 import './ThumbCard.scss';
 
@@ -10,6 +10,7 @@ interface ThumbCardProps {
   onImageError: (imageSrc: string) => void;
   shouldLoadVideo: boolean;
   onClick: (movie: Movie) => void;
+  isPopupActive: boolean;
 }
 
 interface SpacerProps {
@@ -19,6 +20,7 @@ interface SpacerProps {
   onImageError?: never; // 未指定のみを許容
   shouldLoadVideo?: never; // 未指定のみを許容
   onClick?: never; // 未指定のみを許容
+  isPopupActive?: never; // 未指定のみを許容
 }
 
 type Props = ThumbCardProps | SpacerProps;
@@ -30,6 +32,7 @@ export default function ThumbCard({
   onImageError,
   shouldLoadVideo,
   onClick,
+  isPopupActive,
 }: Props): JSX.Element {
   if (isEmptySpacer === true) {
     return (
@@ -45,6 +48,7 @@ export default function ThumbCard({
       onImageLoad={onImageLoad}
       onImageError={onImageError}
       shouldLoadVideo={shouldLoadVideo}
+      isPopupActive={isPopupActive}
     />
   );
 
@@ -78,14 +82,22 @@ function ThumbCardContent({
   onImageLoad,
   onImageError,
   shouldLoadVideo,
+  isPopupActive,
 }: {
   movie: Movie;
   onImageLoad: (imageSrc: string) => void;
   onImageError: (imageSrc: string) => void;
   shouldLoadVideo: boolean;
+  isPopupActive: boolean;
 }): JSX.Element {
   // 動画要素への参照
   const videoRef = useRef<HTMLVideoElement>(null);
+  // コンテナ要素への参照
+  const containerRef = useRef<HTMLDivElement>(null);
+  // ホバー状態を管理
+  const [isHovered, setIsHovered] = useState(false);
+  // ポップアップが開く前のホバー状態を保存
+  const wasHoveredBeforePopup = useRef(false);
 
   // 動画遅延読み込み
   const videoSrc = shouldLoadVideo ? movie.video : null;
@@ -129,22 +141,78 @@ function ThumbCardContent({
   };
 
   const handlePlayStart = () => {
-    console.log('handlePlayStart');
-    if (videoRef.current) {
-      playVideo(videoRef.current);
-    }
+    setIsHovered(true);
+    wasHoveredBeforePopup.current = true;
   };
 
   const handlePlayStop = () => {
-    console.log('handlePlayStop');
-    if (videoRef.current) {
+    setIsHovered(false);
+    wasHoveredBeforePopup.current = false;
+  };
+
+  // ポップアップ状態とホバー状態に基づく動画制御
+  useEffect(() => {
+    if (!videoRef.current) return;
+
+    // ポップアップが開いている場合は動画を停止
+    if (isPopupActive) {
+      pauseVideo(videoRef.current);
+      return;
+    }
+
+    // ポップアップが閉じられていて、ホバー状態の場合は動画を再生
+    if (isHovered) {
+      playVideo(videoRef.current);
+    } else {
       pauseVideo(videoRef.current);
     }
-  };
+  }, [isPopupActive, isHovered]);
+
+  // ポップアップが閉じられた時にホバー状態を復元
+  useEffect(() => {
+    // ポップアップが閉じられた時のみ実行
+    if (!isPopupActive && containerRef.current) {
+      // マウス位置を確認するためのハンドラー
+      const checkMousePosition = () => {
+        if (!containerRef.current) return;
+
+        const rect = containerRef.current.getBoundingClientRect();
+
+        // マウス位置を取得するためにグローバルなマウス位置を使用
+        const handleMouseMove = (event: MouseEvent) => {
+          const isMouseOver =
+            event.clientX >= rect.left &&
+            event.clientX <= rect.right &&
+            event.clientY >= rect.top &&
+            event.clientY <= rect.bottom;
+
+          setIsHovered(isMouseOver);
+          document.removeEventListener('mousemove', handleMouseMove);
+        };
+
+        // 一時的にマウス移動イベントを監視
+        document.addEventListener('mousemove', handleMouseMove);
+
+        // 100ms後にクリーンアップ（マウスが動かない場合のフォールバック）
+        setTimeout(() => {
+          document.removeEventListener('mousemove', handleMouseMove);
+          // マウスが動かない場合は、DOM要素の:hover疑似クラスを確認
+          if (containerRef.current) {
+            const isHovered = containerRef.current.matches(':hover');
+            setIsHovered(isHovered);
+          }
+        }, 100);
+      };
+
+      // 少し遅延させてポップアップが完全に閉じてから実行
+      setTimeout(checkMousePosition, 50);
+    }
+  }, [isPopupActive]);
 
   return (
     <>
       <div
+        ref={containerRef}
         className="thumb-image-container"
         onMouseEnter={handlePlayStart}
         onMouseLeave={handlePlayStop}
