@@ -13,6 +13,7 @@ import PopupContainer from './components/PopupContainer';
 
 export default function App() {
   const [isPopupActive, setIsPopupActive] = useState(false);
+  const [partyTime, setPartyTime] = useState(false);
   const [currentMovie, setCurrentMovie] = useState<Movie | null>(null);
 
   const sortedMovies = useMemo(
@@ -53,11 +54,15 @@ export default function App() {
     setCurrentMovie(null);
   };
 
+  const handlePartyTime = () => {
+    setPartyTime(!partyTime);
+  };
+
   return (
     <div className="app">
       <header className="header">
         <h1 className="title jost-light-italic">#nemusugi</h1>
-        <div className="subtitle jost-light">I'm crazy sleepy.</div>
+        <div className="subtitle jost-light">I'm <span onClick={handlePartyTime} className={`party-time ${partyTime ? 'enabled' : ''}`}>crazy</span> sleepy.</div>
       </header>
 
       <PopupContainer active={isPopupActive} onClose={handleClosePopup}>
@@ -100,6 +105,7 @@ export default function App() {
                 shouldLoadVideo={allImagesLoaded}
                 onClick={handleMovieClick}
                 isPopupActive={isPopupActive}
+                forcePlay={partyTime}
               />
             ))}
             <ThumbCard isEmptySpacer={true} />

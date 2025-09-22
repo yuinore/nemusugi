@@ -50,7 +50,8 @@
 }
 
 .thumb-card:hover .thumb-video,
-.thumb-card:active .thumb-video {
+.thumb-card:active .thumb-video,
+.thumb-card.active .thumb-video {
   opacity: 1;
 }
 
@@ -68,7 +69,7 @@
 
 .coming-soon-text {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: min(1.2rem, 36px);
   letter-spacing: 1px;
 }
 
@@ -88,14 +89,14 @@
 }
 
 .thumb-title {
-  font-size: 1rem;
+  font-size: min(1rem, 24px);
   color: #000000;
   margin: 0 0 0.5rem 0;
   line-height: 1.4;
 }
 
 .thumb-description {
-  font-size: 0.85rem;
+  font-size: min(0.85rem, 20px);
   color: #666;
   margin: 0;
   line-height: 1.5;

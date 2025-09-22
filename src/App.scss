@@ -41,6 +41,15 @@
   letter-spacing: 0.3em;
 }
 
+.subtitle .party-time {
+  cursor: pointer;
+  &.enabled {
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 0.25em;
+  }
+}
+
 /* Main content */
 .main {
   flex: 1;

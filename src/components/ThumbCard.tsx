@@ -11,6 +11,7 @@ interface ThumbCardProps {
   shouldLoadVideo: boolean;
   onClick: (movie: Movie) => void;
   isPopupActive: boolean;
+  forcePlay: boolean;
 }
 
 interface SpacerProps {
@@ -21,6 +22,7 @@ interface SpacerProps {
   shouldLoadVideo?: never; // 未指定のみを許容
   onClick?: never; // 未指定のみを許容
   isPopupActive?: never; // 未指定のみを許容
+  forcePlay?: never; // 未指定のみを許容
 }
 
 type Props = ThumbCardProps | SpacerProps;
@@ -33,6 +35,7 @@ export default function ThumbCard({
   shouldLoadVideo,
   onClick,
   isPopupActive,
+  forcePlay,
 }: Props): JSX.Element {
   if (isEmptySpacer === true) {
     return (
@@ -49,6 +52,7 @@ export default function ThumbCard({
       onImageError={onImageError}
       shouldLoadVideo={shouldLoadVideo}
       isPopupActive={isPopupActive}
+      forcePlay={forcePlay}
     />
   );
 
@@ -65,7 +69,7 @@ export default function ThumbCard({
         href={movie.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="thumb-card"
+        className={`thumb-card ${forcePlay ? 'active' : ''}`}
         aria-label={movie.title}
         onClick={handleClick}
       >
@@ -83,12 +87,14 @@ function ThumbCardContent({
   onImageError,
   shouldLoadVideo,
   isPopupActive,
+  forcePlay,
 }: {
   movie: Movie;
   onImageLoad: (imageSrc: string) => void;
   onImageError: (imageSrc: string) => void;
   shouldLoadVideo: boolean;
   isPopupActive: boolean;
+  forcePlay: boolean;
 }): JSX.Element {
   // 動画要素への参照
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -98,6 +104,8 @@ function ThumbCardContent({
   const [isHovered, setIsHovered] = useState(false);
   // ポップアップが開く前のホバー状態を保存
   const wasHoveredBeforePopup = useRef(false);
+
+  const isVideoPlaying = isHovered || forcePlay;
 
   // 動画遅延読み込み
   const videoSrc = shouldLoadVideo ? movie.video : null;
@@ -161,12 +169,12 @@ function ThumbCardContent({
     }
 
     // ポップアップが閉じられていて、ホバー状態の場合は動画を再生
-    if (isHovered) {
+    if (isVideoPlaying) {
       playVideo(videoRef.current);
     } else {
       pauseVideo(videoRef.current);
     }
-  }, [isPopupActive, isHovered]);
+  }, [isPopupActive, isVideoPlaying]);
 
   // ポップアップが閉じられた時にホバー状態を復元
   useEffect(() => {
