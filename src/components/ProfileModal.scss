@@ -6,6 +6,8 @@
   padding: 1.5rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   max-width: 40rem;
+  overflow-y: auto;
+  margin: auto;
 }
 
 .profile-modal-centering {
@@ -14,8 +16,8 @@
 
 .profile-large-image-container {
   display: inline-block;
-  width: min(180px, 75vw);
-  height: min(180px, 75vw);
+  width: min(180px, calc(100vw - 3rem - 60px));
+  height: min(180px, calc(100vw - 3rem - 60px));
   margin-bottom: 0.25rem;
   border-radius: 50%;
   overflow: hidden;

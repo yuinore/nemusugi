@@ -14,5 +14,7 @@
     z-index: 99999;
     padding: 20px;
     box-sizing: border-box;
+    overflow-y: auto;
+    min-height: 100vh;
   }
 }
