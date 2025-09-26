@@ -255,7 +255,7 @@ function ThumbCardContent({
           </div>
         )}
         <div className="thumb-info">
-          <h3 className="thumb-title jost-light">{movie.title}</h3>
+          <h3 className="thumb-title noto-sans-jp-regular">{movie.title}</h3>
           <p className="thumb-description noto-sans-jp-thin">
             {movie.description}
           </p>

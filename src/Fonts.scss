@@ -2,14 +2,14 @@
 
 /* Jost Font Classes */
 .jost-light {
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
 }
 
 .jost-light-italic {
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: italic;
@@ -17,8 +17,22 @@
 
 /* Noto Sans JP Font Classes */
 .noto-sans-jp-thin {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
+  font-style: normal;
+}
+
+.noto-sans-jp-regular {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans-jp-bold {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
 }

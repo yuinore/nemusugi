@@ -6,12 +6,14 @@ interface Props {
   profile: Profile;
   onImageLoad: (imageSrc: string) => void;
   onImageError: (imageSrc: string) => void;
+  onClick: (profile: Profile) => void;
 }
 
 export default function ProfileCard({
   profile,
   onImageLoad,
   onImageError,
+  onClick,
 }: Props): JSX.Element {
   // 画像読み込み完了を追跡
   const handleImageLoad = () => {
@@ -24,6 +26,11 @@ export default function ProfileCard({
     onImageError(profile.image2x);
   };
 
+  const handleClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    onClick(profile);
+  };
+
   return (
     <div className="profile-card">
       <a
@@ -32,12 +39,13 @@ export default function ProfileCard({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={profile.name}
+        onClick={handleClick}
       >
         <span className="profile-image-container">
           <img
             src={profile.image}
             srcSet={`${profile.image} 1x, ${profile.image2x} 2x`}
-            alt={`${profile.name} のプロフィール画像`}
+            alt={`${profile.name} : ${profile.description}`}
             className="profile-image"
             onLoad={handleImageLoad}
             onError={handleImageError}

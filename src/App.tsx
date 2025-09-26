@@ -10,11 +10,15 @@ import { useMemo, useState } from 'react';
 import { useImageLoadTracker } from '@src/hooks/useImageLoadTracker';
 import type { Movie } from '@src/types/Movie';
 import PopupContainer from './components/PopupContainer';
+import type { Profile } from './types/Profile';
+import ProfileModal from './components/ProfileModal';
 
 export default function App() {
   const [isPopupActive, setIsPopupActive] = useState(false);
+  const [isProfilePopupActive, setIsProfilePopupActive] = useState(false);
   const [partyTime, setPartyTime] = useState(false);
   const [currentMovie, setCurrentMovie] = useState<Movie | null>(null);
+  const [currentProfile, setCurrentProfile] = useState<Profile | null>(null);
 
   const sortedMovies = useMemo(
     () =>
@@ -54,6 +58,16 @@ export default function App() {
     setCurrentMovie(null);
   };
 
+  const handleProfileClick = (profile: Profile) => {
+    setIsProfilePopupActive(true);
+    setCurrentProfile(profile);
+  };
+
+  const handleCloseProfilePopup = () => {
+    setIsProfilePopupActive(false);
+    setCurrentProfile(null);
+  };
+
   const handlePartyTime = () => {
     setPartyTime(!partyTime);
   };
@@ -62,7 +76,16 @@ export default function App() {
     <div className="app">
       <header className="header">
         <h1 className="title jost-light-italic">#nemusugi</h1>
-        <div className="subtitle jost-light">I'm <span onClick={handlePartyTime} className={`party-time ${partyTime ? 'enabled' : ''}`}>crazy</span> sleepy.</div>
+        <div className="subtitle jost-light">
+          I'm{' '}
+          <span
+            onClick={handlePartyTime}
+            className={`party-time ${partyTime ? 'enabled' : ''}`}
+          >
+            crazy
+          </span>{' '}
+          sleepy.
+        </div>
       </header>
 
       <PopupContainer active={isPopupActive} onClose={handleClosePopup}>
@@ -80,6 +103,18 @@ export default function App() {
         )}
       </PopupContainer>
 
+      <PopupContainer
+        active={isProfilePopupActive}
+        onClose={handleCloseProfilePopup}
+      >
+        {currentProfile && (
+          <ProfileModal
+            profile={currentProfile}
+            onClose={handleCloseProfilePopup}
+          />
+        )}
+      </PopupContainer>
+
       <main className="main" id="main">
         <section className="profiles-section">
           <div className="profiles-container">
@@ -89,6 +124,7 @@ export default function App() {
                 profile={profile}
                 onImageLoad={onImageLoad}
                 onImageError={onImageError}
+                onClick={handleProfileClick}
               />
             ))}
           </div>
