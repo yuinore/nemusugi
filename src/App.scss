@@ -43,6 +43,9 @@
 
 .subtitle .party-time {
   cursor: pointer;
+  &:hover{
+    font-style: italic;
+  }
   &.enabled {
     font-style: italic;
     font-weight: bold;

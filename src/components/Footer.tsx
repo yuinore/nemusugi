@@ -30,7 +30,15 @@ export default function Footer(): JSX.Element {
           </div>
         </div>
         <div className="footer-text">
-          <span className="jost-light">#nemusugi / designed by yuinore</span>
+          <div className="jost-light">#nemusugi / designed by yuinore</div>
+          <div className="footer-text-hover-container">
+            <div className="jost-light-italic footer-text-hover-foreground">
+              Notice: This is a fact-based parody website.
+            </div>
+            <div className="noto-sans-jp-thin footer-text-hover-background">
+              注：これは事実を基にしたジョークサイトです。
+            </div>
+          </div>
         </div>
       </div>
     </footer>
