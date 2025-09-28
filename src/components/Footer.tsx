@@ -36,7 +36,7 @@ export default function Footer(): JSX.Element {
               Notice: This is a fact-based parody website.
             </div>
             <div className="noto-sans-jp-thin footer-text-hover-background">
-              注：これは事実を基にしたジョークサイトです。
+              注：このサイトは事実を基にしたジョークサイトです。
             </div>
           </div>
         </div>
