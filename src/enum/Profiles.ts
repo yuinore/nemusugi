@@ -3,6 +3,8 @@ import type { Profile } from '@src/types/Profile';
 const profiles: Profile[] = [
   {
     name: 'yuinore',
+    role: 'MV',
+    furigana: 'ゆいのあ',
     image: '/images/profile/yuinore.png',
     image2x: '/images/profile/yuinore@2x.png',
     href: 'https://x.com/yuinore',
@@ -23,6 +25,8 @@ const profiles: Profile[] = [
   },
   {
     name: 'Yu^ta',
+    role: 'Music',
+    furigana: 'ゆーた',
     image: '/images/profile/yuta.png',
     image2x: '/images/profile/yuta@2x.png',
     href: 'https://x.com/yutaortslabo',

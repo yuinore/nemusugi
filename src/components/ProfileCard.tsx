@@ -52,6 +52,9 @@ export default function ProfileCard({
           />
         </span>
       </a>
+      <div className="profile-role">
+        <span className="jost-light-italic">{profile.role}</span>
+      </div>
       <div className="profile-name">
         <span className="jost-light">{profile.name}</span>
       </div>

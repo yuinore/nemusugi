@@ -35,11 +35,25 @@
   object-fit: cover;
 }
 
+.profile-role-large {
+  font-size: 1rem;
+  color: #666;
+  letter-spacing: 0.1em;
+  margin-top: 1rem;
+}
+
 .profile-name-large {
   font-size: 2rem;
-  margin-bottom: 0.75rem;
   color: #000000;
   letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.profile-furigana-large {
+  font-size: 0.85rem;
+  color: #888;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.25rem;
 }
 
 .profile-modal-link-container {

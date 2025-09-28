@@ -24,8 +24,14 @@ export default function ProfileModal({ profile, onClose }: Props): JSX.Element {
             className="profile-image-large"
           />
         </div>
+        <div className="profile-role-large">
+          <span className="jost-light-italic">{profile.role}</span>
+        </div>
         <div className="profile-name-large">
           <span className="jost-light">{profile.name}</span>
+        </div>
+        <div className="profile-furigana-large">
+          <span className="noto-sans-jp-regular">{profile.furigana}</span>
         </div>
         <div className="profile-modal-link-container">
           {profile.links.map((link) => (
