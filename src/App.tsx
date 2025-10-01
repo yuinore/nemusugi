@@ -74,7 +74,11 @@ export default function App() {
 
   return (
     <div className="app">
-      <div className="page" id="page">
+      <div
+        className="page"
+        id="page"
+        inert={isPopupActive || isProfilePopupActive}
+      >
         <header className="header">
           <h1 className="title jost-light-italic">#nemusugi</h1>
           <div className="subtitle jost-light">
