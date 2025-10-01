@@ -134,16 +134,27 @@ export default function App() {
       <div className="popup-containers">
         <PopupContainer active={isPopupActive} onClose={handleClosePopup}>
           {currentMovie && currentMovie.hrefEmbed && (
-            <iframe
-              width="560"
-              height="315"
-              src={currentMovie.hrefEmbed}
-              title={`YouTube video player - ${currentMovie.title}`}
-              style={{ border: 'none' }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
+            <div>
+              <iframe
+                width="560"
+                height="315"
+                src={currentMovie.hrefEmbed}
+                title={`YouTube video player - ${currentMovie.title}`}
+                style={{ border: 'none' }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+              <div className="app-video-modal-close">
+                <a
+                  className="noto-sans-jp-thin"
+                  href="#"
+                  onClick={handleClosePopup}
+                >
+                  Close
+                </a>
+              </div>
+            </div>
           )}
         </PopupContainer>
 
