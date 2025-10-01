@@ -36,6 +36,7 @@ export default function ProfileModal({ profile, onClose }: Props): JSX.Element {
         <div className="profile-modal-link-container">
           {profile.links.map((link) => (
             <a
+              key={link.title}
               className={`profile-modal-link-badge profile-modal-link-${link.variant} jost-light`}
               href={link.href}
               target="_blank"
