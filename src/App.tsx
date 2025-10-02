@@ -118,7 +118,7 @@ export default function App() {
                   onImageError={onImageError}
                   shouldLoadVideo={allImagesLoaded}
                   onClick={handleMovieClick}
-                  isPopupActive={isPopupActive}
+                  isAnyPopupActive={isPopupActive || isProfilePopupActive}
                   forcePlay={partyTime}
                 />
               ))}
