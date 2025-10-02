@@ -8,7 +8,7 @@ interface PopupScrollbarProps {
 
 export default function PopupScrollbar({ children }: PopupScrollbarProps) {
   return (
-    <SimpleBar className="popup-scrollbar" autoHide={false} forceVisible="y">
+    <SimpleBar className="popup-scrollbar" autoHide={true} forceVisible="y">
       {children}
     </SimpleBar>
   );
