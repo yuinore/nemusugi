@@ -151,7 +151,10 @@ export default function App() {
                   <a
                     className="noto-sans-jp-thin"
                     href="#"
-                    onClick={handleClosePopup}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleClosePopup();
+                    }}
                   >
                     Close
                   </a>

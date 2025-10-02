@@ -24,3 +24,9 @@
     opacity: 1;
   }
 }
+
+.simplebar-content-wrapper.popup-scrollbar-content-wrapper:focus-visible {
+  outline: 4px solid black !important;
+  outline-offset: -4px !important;
+  border-radius: 4px !important;
+}

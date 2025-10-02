@@ -11,9 +11,8 @@
   display: none;
 }
 
-// // for debugging
-// .simplebar-content-wrapper:focus-visible {
-//   outline: 10px solid red !important;
-//   outline-offset: -10px !important;
-//   border-radius: 10px !important;
-// }
+.simplebar-content-wrapper.body-scrollbar-content-wrapper:focus-visible {
+  outline: 4px solid black !important;
+  outline-offset: -4px !important;
+  border-radius: 4px !important;
+}

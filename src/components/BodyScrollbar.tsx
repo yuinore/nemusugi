@@ -14,26 +14,34 @@ export default function BodyScrollbar({
   useEffect(() => {
     // 最悪すぎる解決法
     const timeout = setTimeout(() => {
-      document
-        .querySelector('.simplebar-content-wrapper')
-        ?.setAttribute('tabindex', '-1');
+      if (isScrollbarHidden) {
+        document
+          .querySelectorAll('.body-scrollbar-content-wrapper')
+          .forEach((element) => {
+            element.setAttribute('tabindex', '-1');
+          });
+      } else {
+        document
+          .querySelectorAll('.body-scrollbar-content-wrapper')
+          .forEach((element) => {
+            element.setAttribute('tabindex', '1');
+          });
+      }
     }, 100);
 
     return () => {
       clearTimeout(timeout);
     };
-  }, []);
+  }, [isScrollbarHidden]);
 
   return (
     <SimpleBar
       className="body-scrollbar"
-      classNames={
-        isScrollbarHidden
-          ? {
-              track: 'simplebar-track body-scrollbar-track hidden',
-            }
-          : undefined
-      }
+      classNames={{
+        contentWrapper:
+          'simplebar-content-wrapper body-scrollbar-content-wrapper',
+        track: `simplebar-track body-scrollbar-track${isScrollbarHidden ? ' hidden' : ''}`,
+      }}
       autoHide={true}
       forceVisible="y"
     >
