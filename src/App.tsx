@@ -12,6 +12,7 @@ import type { Movie } from '@src/types/Movie';
 import PopupContainer from './components/PopupContainer';
 import type { Profile } from './types/Profile';
 import ProfileModal from './components/ProfileModal';
+import BodyScrollbar from './components/BodyScrollbar';
 
 export default function App() {
   const [isPopupActive, setIsPopupActive] = useState(false);
@@ -73,103 +74,105 @@ export default function App() {
   };
 
   return (
-    <div className="app">
-      <div
-        className="page"
-        id="page"
-        inert={isPopupActive || isProfilePopupActive}
-      >
-        <header className="header">
-          <h1 className="title jost-light-italic">#nemusugi</h1>
-          <div className="subtitle jost-light">
-            I'm{' '}
-            <span
-              onClick={handlePartyTime}
-              className={`party-time ${partyTime ? 'enabled' : ''}`}
-            >
-              crazy
-            </span>{' '}
-            sleepy.
-          </div>
-        </header>
-
-        <main className="main" id="main">
-          <section className="profiles-section">
-            <div className="profiles-container">
-              {profiles.map((profile) => (
-                <ProfileCard
-                  key={profile.name}
-                  profile={profile}
-                  onImageLoad={onImageLoad}
-                  onImageError={onImageError}
-                  onClick={handleProfileClick}
-                />
-              ))}
-            </div>
-          </section>
-
-          <section className="movies-section">
-            <div className="movies-grid">
-              {sortedMovies.map((movie: Movie, index: number) => (
-                <ThumbCard
-                  key={index}
-                  movie={movie}
-                  onImageLoad={onImageLoad}
-                  onImageError={onImageError}
-                  shouldLoadVideo={allImagesLoaded}
-                  onClick={handleMovieClick}
-                  isPopupActive={isPopupActive}
-                  forcePlay={partyTime}
-                />
-              ))}
-              <ThumbCard isEmptySpacer={true} />
-              <ThumbCard isEmptySpacer={true} />
-              <ThumbCard isEmptySpacer={true} />
-            </div>
-          </section>
-        </main>
-
-        <Footer />
-      </div>
-      <div className="popup-containers">
-        <PopupContainer active={isPopupActive} onClose={handleClosePopup}>
-          {currentMovie && currentMovie.hrefEmbed && (
-            <div>
-              <iframe
-                width="560"
-                height="315"
-                src={currentMovie.hrefEmbed}
-                title={`YouTube video player - ${currentMovie.title}`}
-                style={{ border: 'none' }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-              <div className="app-video-modal-close">
-                <a
-                  className="noto-sans-jp-thin"
-                  href="#"
-                  onClick={handleClosePopup}
-                >
-                  Close
-                </a>
-              </div>
-            </div>
-          )}
-        </PopupContainer>
-
-        <PopupContainer
-          active={isProfilePopupActive}
-          onClose={handleCloseProfilePopup}
+    <BodyScrollbar>
+      <div className="app">
+        <div
+          className="page"
+          id="page"
+          inert={isPopupActive || isProfilePopupActive}
         >
-          {currentProfile && (
-            <ProfileModal
-              profile={currentProfile}
-              onClose={handleCloseProfilePopup}
-            />
-          )}
-        </PopupContainer>
+          <header className="header">
+            <h1 className="title jost-light-italic">#nemusugi</h1>
+            <div className="subtitle jost-light">
+              I'm{' '}
+              <span
+                onClick={handlePartyTime}
+                className={`party-time ${partyTime ? 'enabled' : ''}`}
+              >
+                crazy
+              </span>{' '}
+              sleepy.
+            </div>
+          </header>
+
+          <main className="main" id="main">
+            <section className="profiles-section">
+              <div className="profiles-container">
+                {profiles.map((profile) => (
+                  <ProfileCard
+                    key={profile.name}
+                    profile={profile}
+                    onImageLoad={onImageLoad}
+                    onImageError={onImageError}
+                    onClick={handleProfileClick}
+                  />
+                ))}
+              </div>
+            </section>
+
+            <section className="movies-section">
+              <div className="movies-grid">
+                {sortedMovies.map((movie: Movie, index: number) => (
+                  <ThumbCard
+                    key={index}
+                    movie={movie}
+                    onImageLoad={onImageLoad}
+                    onImageError={onImageError}
+                    shouldLoadVideo={allImagesLoaded}
+                    onClick={handleMovieClick}
+                    isPopupActive={isPopupActive}
+                    forcePlay={partyTime}
+                  />
+                ))}
+                <ThumbCard isEmptySpacer={true} />
+                <ThumbCard isEmptySpacer={true} />
+                <ThumbCard isEmptySpacer={true} />
+              </div>
+            </section>
+          </main>
+
+          <Footer />
+        </div>
+        <div className="popup-containers">
+          <PopupContainer active={isPopupActive} onClose={handleClosePopup}>
+            {currentMovie && currentMovie.hrefEmbed && (
+              <div>
+                <iframe
+                  width="560"
+                  height="315"
+                  src={currentMovie.hrefEmbed}
+                  title={`YouTube video player - ${currentMovie.title}`}
+                  style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+                <div className="app-video-modal-close">
+                  <a
+                    className="noto-sans-jp-thin"
+                    href="#"
+                    onClick={handleClosePopup}
+                  >
+                    Close
+                  </a>
+                </div>
+              </div>
+            )}
+          </PopupContainer>
+
+          <PopupContainer
+            active={isProfilePopupActive}
+            onClose={handleCloseProfilePopup}
+          >
+            {currentProfile && (
+              <ProfileModal
+                profile={currentProfile}
+                onClose={handleCloseProfilePopup}
+              />
+            )}
+          </PopupContainer>
+        </div>
       </div>
-    </div>
+    </BodyScrollbar>
   );
 }

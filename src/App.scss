@@ -1,19 +1,28 @@
 // Sass の @import は非推奨（@use を使用）
 @use './Fonts.scss';
 
+/* the <html> element (to define CSS variables) */
 :root {
   --thumb-max-size: 300px;
   --grid-gap: 10px;
 }
 
-/* Root styles */
+/* the <body> element */
+body {
+  /* Hide default scrollbar */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* the <div> element which includes all React components */
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* App container */
+/* The content of the page */
 .app {
   min-height: 100vh;
   display: flex;
