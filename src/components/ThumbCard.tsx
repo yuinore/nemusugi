@@ -10,7 +10,7 @@ interface ThumbCardProps {
   onImageError: (imageSrc: string) => void;
   shouldLoadVideo: boolean;
   onClick: (movie: Movie) => void;
-  isPopupActive: boolean;
+  isAnyPopupActive: boolean;
   forcePlay: boolean;
 }
 
@@ -21,7 +21,7 @@ interface SpacerProps {
   onImageError?: never; // 未指定のみを許容
   shouldLoadVideo?: never; // 未指定のみを許容
   onClick?: never; // 未指定のみを許容
-  isPopupActive?: never; // 未指定のみを許容
+  isAnyPopupActive?: never; // 未指定のみを許容
   forcePlay?: never; // 未指定のみを許容
 }
 
@@ -34,7 +34,7 @@ export default function ThumbCard({
   onImageError,
   shouldLoadVideo,
   onClick,
-  isPopupActive,
+  isAnyPopupActive,
   forcePlay,
 }: Props): JSX.Element {
   if (isEmptySpacer === true) {
@@ -51,7 +51,7 @@ export default function ThumbCard({
       onImageLoad={onImageLoad}
       onImageError={onImageError}
       shouldLoadVideo={shouldLoadVideo}
-      isPopupActive={isPopupActive}
+      isAnyPopupActive={isAnyPopupActive}
       forcePlay={forcePlay}
     />
   );
@@ -86,14 +86,14 @@ function ThumbCardContent({
   onImageLoad,
   onImageError,
   shouldLoadVideo,
-  isPopupActive,
+  isAnyPopupActive,
   forcePlay,
 }: {
   movie: Movie;
   onImageLoad: (imageSrc: string) => void;
   onImageError: (imageSrc: string) => void;
   shouldLoadVideo: boolean;
-  isPopupActive: boolean;
+  isAnyPopupActive: boolean;
   forcePlay: boolean;
 }): JSX.Element {
   // 動画要素への参照
@@ -163,7 +163,7 @@ function ThumbCardContent({
     if (!videoRef.current) return;
 
     // ポップアップが開いている場合は動画を停止
-    if (isPopupActive) {
+    if (isAnyPopupActive) {
       pauseVideo(videoRef.current);
       return;
     }
@@ -174,12 +174,12 @@ function ThumbCardContent({
     } else {
       pauseVideo(videoRef.current);
     }
-  }, [isPopupActive, isVideoPlaying]);
+  }, [isAnyPopupActive, isVideoPlaying]);
 
   // ポップアップが閉じられた時にホバー状態を復元
   useEffect(() => {
     // ポップアップが閉じられた時のみ実行
-    if (!isPopupActive && containerRef.current) {
+    if (!isAnyPopupActive && containerRef.current) {
       // マウス位置を確認するためのハンドラー
       const checkMousePosition = () => {
         if (!containerRef.current) return;
@@ -215,7 +215,7 @@ function ThumbCardContent({
       // 少し遅延させてポップアップが完全に閉じてから実行
       setTimeout(checkMousePosition, 50);
     }
-  }, [isPopupActive]);
+  }, [isAnyPopupActive]);
 
   return (
     <>
