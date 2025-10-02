@@ -74,7 +74,7 @@ export default function App() {
   };
 
   return (
-    <BodyScrollbar>
+    <BodyScrollbar isScrollbarHidden={isPopupActive || isProfilePopupActive}>
       <div className="app">
         <div
           className="page"

@@ -1,22 +1,26 @@
 import React from 'react';
 import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
+import './BodyScrollbar.scss';
 
 interface BodyScrollbarProps {
   children: React.ReactNode;
+  isScrollbarHidden: boolean;
 }
 
-export default function BodyScrollbar({ children }: BodyScrollbarProps) {
+export default function BodyScrollbar({
+  children,
+  isScrollbarHidden,
+}: BodyScrollbarProps) {
   return (
     <SimpleBar
-      style={{
-        height: '100vh',
-        width: '100vw',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        zIndex: 1,
-      }}
+      className="body-scrollbar"
+      classNames={
+        isScrollbarHidden
+          ? {
+              track: 'simplebar-track body-scrollbar-track hidden',
+            }
+          : undefined
+      }
       autoHide={false}
       forceVisible="y"
     >
