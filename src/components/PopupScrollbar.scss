@@ -1,0 +1,15 @@
+.popup-scrollbar {
+  // background-color: rgb(8 8 8 / 0.5);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0 8 16 / 0.3),
+    rgba(0 8 16 / 0.7)
+  );
+  backdrop-filter: blur(4px);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}

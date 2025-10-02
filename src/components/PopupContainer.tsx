@@ -1,5 +1,6 @@
 import './PopupContainer.scss';
 import { useEffect } from 'react';
+import PopupScrollbar from './PopupScrollbar';
 
 interface Props {
   active: boolean;
@@ -48,9 +49,11 @@ export default function PopupContainer({ active, children, onClose }: Props) {
   return (
     <div className="popup-container">
       {active && (
-        <div className="popup-container-overlay" onClick={handleOverlayClick}>
-          {children}
-        </div>
+        <PopupScrollbar>
+          <div className="popup-container-overlay" onClick={handleOverlayClick}>
+            {children}
+          </div>
+        </PopupScrollbar>
       )}
     </div>
   );
