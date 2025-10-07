@@ -6,9 +6,14 @@
     width: 100vw;
     height: 100vh;
     // background-color: rgb(8 8 8 / 0.5);
-    background-image: linear-gradient(to bottom, rgba(0 8 16 / 0.3), rgba(0 8 16 / 0.7));
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0 8 16 / 0.3),
+      rgba(0 8 16 / 0.7)
+    );
     backdrop-filter: blur(4px);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     z-index: 99999;

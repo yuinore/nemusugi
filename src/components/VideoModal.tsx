@@ -14,6 +14,7 @@ export default function VideoModal({ movie, onClose }: Props) {
 
   return (
     <div>
+      <h2 className="video-modal-title noto-sans-jp-regular">{movie.title}</h2>
       <iframe
         src={movie.hrefEmbed || ''}
         title={`YouTube video player - ${movie.title}`}
