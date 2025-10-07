@@ -34,6 +34,8 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: auto;
+  opacity: 0;
+  animation: pageFadeIn 0.5s ease-out forwards;
 }
 
 /* Header */
@@ -128,5 +130,14 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+  }
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
