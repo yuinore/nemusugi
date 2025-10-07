@@ -6,6 +6,11 @@
   --grid-gap: 10px;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Root styles */
 #root {
   min-height: 100vh;
