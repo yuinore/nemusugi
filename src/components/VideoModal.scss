@@ -1,0 +1,13 @@
+.video-modal-close {
+  text-align: right;
+  font-size: 0.85rem;
+  a {
+    color: #ffffff;
+    &:link,
+    &:hover,
+    &:visited,
+    &:active {
+      color: #ffffff;
+    }
+  }
+}

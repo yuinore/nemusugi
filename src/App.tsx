@@ -12,6 +12,7 @@ import type { Movie } from '@src/types/Movie';
 import PopupContainer from './components/PopupContainer';
 import type { Profile } from './types/Profile';
 import ProfileModal from './components/ProfileModal';
+import VideoModal from './components/VideoModal';
 
 export default function App() {
   const [isPopupActive, setIsPopupActive] = useState(false);
@@ -134,29 +135,10 @@ export default function App() {
       <div className="popup-containers">
         <PopupContainer active={isPopupActive} onClose={handleClosePopup}>
           {currentMovie && currentMovie.hrefEmbed && (
-            <div>
-              <iframe
-                src={currentMovie.hrefEmbed}
-                title={`YouTube video player - ${currentMovie.title}`}
-                style={{
-                  border: 'none',
-                  width: 'min(560px, 95vw)',
-                  height: 'min(315px, calc(95vw * 0.5625))',
-                }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-              <div className="app-video-modal-close">
-                <a
-                  className="noto-sans-jp-thin"
-                  href="#"
-                  onClick={handleClosePopup}
-                >
-                  Close
-                </a>
-              </div>
-            </div>
+            <VideoModal
+              movie={currentMovie}
+              onClose={handleClosePopup}
+            />
           )}
         </PopupContainer>
 
