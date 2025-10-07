@@ -136,11 +136,13 @@ export default function App() {
           {currentMovie && currentMovie.hrefEmbed && (
             <div>
               <iframe
-                width="560"
-                height="315"
                 src={currentMovie.hrefEmbed}
                 title={`YouTube video player - ${currentMovie.title}`}
-                style={{ border: 'none' }}
+                style={{
+                  border: 'none',
+                  width: 'min(560px, 95vw)',
+                  height: 'min(315px, calc(95vw * 0.5625))',
+                }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
