@@ -8,19 +8,6 @@ interface Props {
 }
 
 export default function PopupContainer({ active, children, onClose }: Props) {
-  // 背景スクロールを無効にする
-  useEffect(() => {
-    if (active) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [active]);
-
   // ESCキーでクローズ
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
