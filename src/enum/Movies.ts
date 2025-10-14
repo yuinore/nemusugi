@@ -113,15 +113,15 @@ const movies: Movie[] = [
     isComingSoon: true,
   },
   {
-    title: '???',
+    title: '幸せの青い鳥',
     image: '/images/movie_010_bird_wip_01.jpg',
     image2x: '/images/movie_010_bird_wip_01@2x.jpg',
-    video: null,
-    description: 'Coming soon...',
-    href: null,
-    hrefEmbed: null,
+    video: '/videos/movie_010_bird.mp4',
+    description: '2025/10/12\n初出 : FRENZ 2025',
+    href: 'https://www.youtube.com/watch?v=ttTZ4m-OK9E&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed: 'https://www.youtube.com/embed/ttTZ4m-OK9E?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2025-10-12',
-    isComingSoon: true,
+    isComingSoon: false,
   },
 ];
 
