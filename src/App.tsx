@@ -13,11 +13,12 @@ import PopupContainer from './components/PopupContainer';
 import type { Profile } from './types/Profile';
 import ProfileModal from './components/ProfileModal';
 import VideoModal from './components/VideoModal';
+import PauseToggleButton from './components/PauseToggleButton';
 
 export default function App() {
   const [isPopupActive, setIsPopupActive] = useState(false);
   const [isProfilePopupActive, setIsProfilePopupActive] = useState(false);
-  const [partyTime, setPartyTime] = useState(false);
+  const [partyTime, setPartyTime] = useState(true);
   const [currentMovie, setCurrentMovie] = useState<Movie | null>(null);
   const [currentProfile, setCurrentProfile] = useState<Profile | null>(null);
 
@@ -70,6 +71,10 @@ export default function App() {
   };
 
   const handlePartyTime = () => {
+    setPartyTime(!partyTime);
+  };
+
+  const handlePauseToggle = () => {
     setPartyTime(!partyTime);
   };
 
@@ -131,14 +136,13 @@ export default function App() {
         </main>
 
         <Footer />
+
+        <PauseToggleButton isPaused={!partyTime} onClick={handlePauseToggle} />
       </div>
       <div className="popup-containers">
         <PopupContainer active={isPopupActive} onClose={handleClosePopup}>
           {currentMovie && currentMovie.hrefEmbed && (
-            <VideoModal
-              movie={currentMovie}
-              onClose={handleClosePopup}
-            />
+            <VideoModal movie={currentMovie} onClose={handleClosePopup} />
           )}
         </PopupContainer>
 

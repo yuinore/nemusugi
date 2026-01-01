@@ -158,6 +158,12 @@ function ThumbCardContent({
     wasHoveredBeforePopup.current = false;
   };
 
+  const handleVideoLoaded = () => {
+    if (forcePlay && !isAnyPopupActive && videoRef.current) {
+      playVideo(videoRef.current);
+    }
+  };
+
   // ポップアップ状態とホバー状態に基づく動画制御
   useEffect(() => {
     if (!videoRef.current) return;
@@ -246,6 +252,7 @@ function ThumbCardContent({
               muted
               playsInline
               preload="auto"
+              onLoadedData={handleVideoLoaded}
               loop
               inert // Firefox で video 要素がフォーカスを獲得しないようにする
             />
