@@ -123,6 +123,17 @@ const movies: Movie[] = [
     published_at: '2025-10-12',
     isComingSoon: false,
   },
+  {
+    title: 'white * cocoa',
+    image: '/images/movie_012_whitecocoa_00.jpg',
+    image2x: '/images/movie_012_whitecocoa_00@2x.jpg',
+    video: '/videos/movie_012_whitecocoa.gif',
+    description: '2025/12/31',
+    href: 'https://www.youtube.com/watch?v=uCqh3OUeoaA&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed: 'https://www.youtube.com/embed/uCqh3OUeoaA?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    published_at: '2025-12-31',
+    isComingSoon: false,
+  },
 ];
 
 export default movies;
