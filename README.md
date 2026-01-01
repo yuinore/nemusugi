@@ -40,6 +40,24 @@ yarn run dev
 yarn run build
 ```
 
+## Image Optimization
+
+Scripts for generating optimized thumbnails from original artwork.
+
+### Setup
+
+```bash
+./tools/images/install.sh
+```
+
+### Usage
+
+```bash
+./tools/images/resize.sh
+```
+
+Place original images in `public/images/original/` and run the script to generate optimized thumbnails in `public/images/`.
+
 ## License & Contributing
 
 **Important**: This repository contains creative content and visual artworks that are currently unlicensed. Therefore, I cannot accept pull requests at this time.
