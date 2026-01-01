@@ -235,18 +235,21 @@ function ThumbCardContent({
           onLoad={handleImageLoad}
           onError={handleImageError}
         />
-        {videoSrc && (
-          <video
-            ref={videoRef}
-            src={videoSrc}
-            className="thumb-video"
-            muted
-            playsInline
-            preload="auto"
-            loop
-            inert // Firefox で video 要素がフォーカスを獲得しないようにする
-          />
-        )}
+        {videoSrc &&
+          (videoSrc.endsWith('.gif') ? (
+            <img src={videoSrc} className="thumb-video" alt={movie.title} />
+          ) : (
+            <video
+              ref={videoRef}
+              src={videoSrc}
+              className="thumb-video"
+              muted
+              playsInline
+              preload="auto"
+              loop
+              inert // Firefox で video 要素がフォーカスを獲得しないようにする
+            />
+          ))}
         {movie.isComingSoon && (
           <div className="coming-soon-overlay">
             <span className="coming-soon-text jost-light-italic">
