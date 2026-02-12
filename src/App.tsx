@@ -14,6 +14,9 @@ import type { Profile } from './types/Profile';
 import ProfileModal from './components/ProfileModal';
 import VideoModal from './components/VideoModal';
 import PauseToggleButton from './components/PauseToggleButton';
+import ThumbExternalLinkCard from './components/ThumbExternalLinkCard';
+import externalLinkCards from './enum/ExternalLinkCards';
+import React from 'react';
 
 export default function App() {
   const [isPopupActive, setIsPopupActive] = useState(false);
@@ -117,16 +120,23 @@ export default function App() {
           <section className="movies-section">
             <div className="movies-grid">
               {sortedMovies.map((movie: Movie, index: number) => (
-                <ThumbCard
-                  key={index}
-                  movie={movie}
-                  onImageLoad={onImageLoad}
-                  onImageError={onImageError}
-                  shouldLoadVideo={allImagesLoaded}
-                  onClick={handleMovieClick}
-                  isAnyPopupActive={isPopupActive || isProfilePopupActive}
-                  forcePlay={partyTime}
-                />
+                <React.Fragment key={index}>
+                  <ThumbCard
+                    // key={index}
+                    movie={movie}
+                    onImageLoad={onImageLoad}
+                    onImageError={onImageError}
+                    shouldLoadVideo={allImagesLoaded}
+                    onClick={handleMovieClick}
+                    isAnyPopupActive={isPopupActive || isProfilePopupActive}
+                    forcePlay={partyTime}
+                  />
+                  {index === 7 && externalLinkCards.length >= 1 && (
+                    <ThumbExternalLinkCard
+                      externalLinkCard={externalLinkCards[0]}
+                    />
+                  )}
+                </React.Fragment>
               ))}
               <ThumbCard isEmptySpacer={true} />
               <ThumbCard isEmptySpacer={true} />
