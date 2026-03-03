@@ -17,6 +17,7 @@ import PauseToggleButton from './components/PauseToggleButton';
 import ThumbExternalLinkCard from './components/ThumbExternalLinkCard';
 import externalLinkCards from './enum/ExternalLinkCards';
 import React from 'react';
+import Contact from './components/Contact';
 
 export default function App() {
   const [isPopupActive, setIsPopupActive] = useState(false);
@@ -118,6 +119,7 @@ export default function App() {
           </section>
 
           <section className="movies-section">
+            <h2 className="section-title jost-light-italic">- Works -</h2>
             <div className="movies-grid">
               {sortedMovies.map((movie: Movie, index: number) => (
                 <React.Fragment key={index}>
@@ -144,6 +146,11 @@ export default function App() {
             </div>
           </section>
         </main>
+
+        <section className="contact-section">
+          <h2 className="section-title jost-light-italic">- Contact -</h2>
+          <Contact />
+        </section>
 
         <Footer />
 

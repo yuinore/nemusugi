@@ -1,0 +1,14 @@
+.contact-item {
+  text-align: center;
+  margin: 0.5rem 0;
+  color: #000000;
+  letter-spacing: 0.1em;
+}
+
+.contact-item a {
+  color: #000000;
+  text-decoration: underline;
+  &:hover {
+    color: #666666;
+  }
+}
