@@ -8,7 +8,8 @@ const movies: Movie[] = [
     video: '/videos/movie_001_cutup.mp4',
     description: '2014/9/7',
     href: 'https://www.youtube.com/watch?v=zsQD9_drLbY&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/zsQD9_drLbY?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/zsQD9_drLbY?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2014-09-07',
     isComingSoon: false,
   },
@@ -19,7 +20,8 @@ const movies: Movie[] = [
     video: '/videos/movie_002_smc.mp4',
     description: '2017/2/14\n初出 : FRENZ 2014',
     href: 'https://www.youtube.com/watch?v=SV_BxJzKcnY&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/SV_BxJzKcnY?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/SV_BxJzKcnY?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2017-02-14',
     isComingSoon: false,
   },
@@ -30,7 +32,8 @@ const movies: Movie[] = [
     video: '/videos/movie_003_busyfactory.mp4',
     description: '2015/10/3\n3DCG : こんにチワワ\n初出 : FRENZ 2015',
     href: 'https://www.youtube.com/watch?v=p2dy2LkOAzs&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/p2dy2LkOAzs?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/p2dy2LkOAzs?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2015-10-03',
     isComingSoon: false,
   },
@@ -41,7 +44,8 @@ const movies: Movie[] = [
     video: '/videos/movie_004_sunny.mp4',
     description: '2016/9/24\n初出 : FRENZ 2016',
     href: 'https://www.youtube.com/watch?v=tp-UAMO69qQ&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/tp-UAMO69qQ?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/tp-UAMO69qQ?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2016-09-24',
     isComingSoon: false,
   },
@@ -53,7 +57,8 @@ const movies: Movie[] = [
     description:
       '2022/2/22\nIllustrations : にせねこ\n3DCG協力 : こんにチワワ\n初出 : FRENZ 2017',
     href: 'https://www.youtube.com/watch?v=RAl73LFNGi4&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/RAl73LFNGi4?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/RAl73LFNGi4?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2022-02-22',
     isComingSoon: false,
   },
@@ -64,7 +69,8 @@ const movies: Movie[] = [
     video: '/videos/movie_006_castleage.mp4',
     description: '2018/12/22\nIllustrations : furea2\n初出 : FRENZ 2018',
     href: 'https://www.youtube.com/watch?v=vU8lj_drm9A&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/vU8lj_drm9A?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/vU8lj_drm9A?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2018-12-22',
     isComingSoon: false,
   },
@@ -75,7 +81,8 @@ const movies: Movie[] = [
     video: '/videos/movie_007_argent.mp4',
     description: '2026/2/14\n原作 : ゆーね様\n初出 : FRENZ 2019',
     href: 'https://www.youtube.com/watch?v=oRNtevkL3XI&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/oRNtevkL3XI?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/oRNtevkL3XI?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2026-02-14',
     isComingSoon: false,
   },
@@ -86,7 +93,8 @@ const movies: Movie[] = [
     video: '/videos/movie_009_nekomimi.mp4',
     description: '2017/2/14',
     href: 'https://www.youtube.com/watch?v=QtbDKZWrUgY&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/QtbDKZWrUgY?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/QtbDKZWrUgY?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2017-02-14',
     isComingSoon: false,
   },
@@ -97,7 +105,8 @@ const movies: Movie[] = [
     video: '/videos/movie_008_mana.mp4',
     description: '2022/1/30',
     href: 'https://www.youtube.com/watch?v=olFZDX0PeBQ&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/olFZDX0PeBQ?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/olFZDX0PeBQ?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2022-01-30',
     isComingSoon: false,
   },
@@ -119,7 +128,8 @@ const movies: Movie[] = [
     video: '/videos/movie_010_bird.mp4',
     description: '2025/10/12\n初出 : FRENZ 2025',
     href: 'https://www.youtube.com/watch?v=ttTZ4m-OK9E&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/ttTZ4m-OK9E?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/ttTZ4m-OK9E?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2025-10-12',
     isComingSoon: false,
   },
@@ -130,7 +140,8 @@ const movies: Movie[] = [
     video: '/videos/movie_012_whitecocoa.gif',
     description: '2025/12/31',
     href: 'https://www.youtube.com/watch?v=uCqh3OUeoaA&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
-    hrefEmbed: 'https://www.youtube.com/embed/uCqh3OUeoaA?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/uCqh3OUeoaA?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2025-12-31',
     isComingSoon: false,
   },
