@@ -73,7 +73,7 @@ const movies: Movie[] = [
     image: '/images/movie_007_argent.jpg',
     image2x: '/images/movie_007_argent@2x.jpg',
     video: '/videos/movie_007_argent.mp4',
-    description: '2026/2/14\n初出 : FRENZ 2019',
+    description: '2026/2/14\n原作 : ゆーね様\n初出 : FRENZ 2019',
     href: 'https://www.youtube.com/watch?v=oRNtevkL3XI&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     hrefEmbed: 'https://www.youtube.com/embed/oRNtevkL3XI?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
     published_at: '2026-02-14',
