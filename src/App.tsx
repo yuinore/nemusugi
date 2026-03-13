@@ -147,6 +147,16 @@ export default function App() {
           </section>
         </main>
 
+        <section className="mission-section">
+          <h2 className="section-title jost-light-italic">- Mission -</h2>
+          <div className="mission-item jost-light">
+            カワイイとモーショングラフィックスで世界を塗り尽くし、
+            <br />
+            人々が思い描いた夢と現実をコネクトします。
+            <br />
+          </div>
+        </section>
+
         <section className="contact-section">
           <h2 className="section-title jost-light-italic">- Contact -</h2>
           <Contact />
