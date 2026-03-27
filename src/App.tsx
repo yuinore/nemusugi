@@ -150,10 +150,8 @@ export default function App() {
         <section className="mission-section">
           <h2 className="section-title jost-light-italic">- Mission -</h2>
           <div className="mission-item jost-light">
-            カワイイとモーショングラフィックスで世界を塗り尽くし、
-            <br />
-            人々が思い描いた夢と現実をコネクトします。
-            <br />
+            <span>カワイイとモーショングラフィックスで世界を塗り尽くし、</span>
+            <span>人々が思い描いた夢と現実をコネクトします。</span>
           </div>
         </section>
 
