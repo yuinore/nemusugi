@@ -145,6 +145,30 @@ const movies: Movie[] = [
     published_at: '2025-12-31',
     isComingSoon: false,
   },
+  {
+    title: 'Proline',
+    image: '/images/movie_013_proline_00.jpg',
+    image2x: '/images/movie_013_proline_00@2x.jpg',
+    video: '/videos/movie_013_proline.mp4',
+    description: '2026/4/19',
+    href: 'https://www.youtube.com/watch?v=2lgkajp2wPo&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/2lgkajp2wPo?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    published_at: '2026-04-19',
+    isComingSoon: false,
+  },
+  {
+    title: 'In and Out',
+    image: '/images/movie_014_cation_00.jpg',
+    image2x: '/images/movie_014_cation_00@2x.jpg',
+    video: '/videos/movie_014_cation.mp4',
+    description: '2026/5/5',
+    href: 'https://www.youtube.com/watch?v=-X6l4X_ctcE&list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    hrefEmbed:
+      'https://www.youtube.com/embed/-X6l4X_ctcE?list=PLbxQo6dzOkDbrF6cKP3MHgj9Qy9CDL6ba',
+    published_at: '2026-05-05',
+    isComingSoon: false,
+  },
 ];
 
 export default movies;
